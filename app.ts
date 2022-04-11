@@ -9,15 +9,17 @@ import usersRouter from "./routes/users";
 
 var app = express();
 
+var CURRENT_WORKING_DIR = process.cwd();
+
 // view engine setup
-app.set("views", join(__dirname, "views"));
+app.set("views", join(CURRENT_WORKING_DIR, "views"));
 app.set("view engine", "pug");
 
 app.use(logger("dev"));
 app.use(json());
 app.use(urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(expressStatic(join(__dirname, "public")));
+app.use(expressStatic(join(CURRENT_WORKING_DIR, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
