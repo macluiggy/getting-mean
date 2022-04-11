@@ -2,10 +2,10 @@
   "name": "getting-mean",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
   "scripts": {
-    "start": "node ./bin/www",
-    "dev": "nodemon"
+    "start": "node ./dist/app.js",
+    "dev": "nodemon",
+    "build": "vite build"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
